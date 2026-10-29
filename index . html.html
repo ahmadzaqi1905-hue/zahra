@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 20th Birthday, Zahra! 🎉</title>
+<style>
+  *{box-sizing:border-box}
+  :root{--pink:#ff6fae;--rose:#f7a8c8;--cream:#fff8f5;--deep:#7b3155}
+  body{margin:0;min-height:100vh;font-family:Georgia,'Times New Roman',serif;color:var(--deep);
+    background:radial-gradient(circle at top left,#ffe0ed,transparent 40%),
+               radial-gradient(circle at bottom right,#f8c9d9,transparent 40%),var(--cream);
+    display:flex;align-items:center;justify-content:center;overflow-x:hidden;padding:24px}
+  .card{position:relative;max-width:680px;width:100%;text-align:center;padding:48px 28px;
+    border:1px solid #f4bfd3;border-radius:28px;background:rgba(255,255,255,.78);
+    box-shadow:0 18px 60px rgba(177,76,119,.15);overflow:hidden}
+  .topline{font:600 12px/1.5 Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:#c15b89}
+  .crown{font-size:42px;margin:12px 0 2px}
+  h1{font-size:clamp(42px,9vw,70px);line-height:1;margin:12px 0;color:#d94f8c;font-weight:normal}
+  .age{display:inline-flex;align-items:center;justify-content:center;width:78px;height:78px;border-radius:50%;
+    background:linear-gradient(135deg,#ffb7d2,#ff77ad);color:white;font: bold 30px Arial,sans-serif;
+    box-shadow:0 8px 22px #ef9fbd;margin:10px 0}
+  .subtitle{font-size:clamp(18px,3vw,23px);margin:12px auto 20px;max-width:480px;line-height:1.5}
+  .divider{color:#e99abb;letter-spacing:9px;margin:18px 0}
+  .message{font-size:17px;line-height:1.9;max-width:500px;margin:0 auto 26px}
+  button{border:0;border-radius:999px;padding:14px 24px;background:linear-gradient(135deg,#ff85b5,#e85594);
+    color:#fff;font-weight:bold;font-size:15px;cursor:pointer;box-shadow:0 8px 18px #f0b0ca;transition:.2s}
+  button:hover{transform:translateY(-2px);box-shadow:0 11px 22px #eaa1bf}
+  #surprise{display:none;margin:24px auto 0;padding:20px;border-radius:18px;background:#fff0f6;
+    max-width:490px;font-size:18px;line-height:1.7;animation:fade .7s ease}
+  .footer{font:12px Arial,sans-serif;color:#b87594;margin-top:28px;letter-spacing:1px}
+  .heart{position:fixed;bottom:-30px;pointer-events:none;animation:floatUp linear forwards;z-index:5}
+  @keyframes floatUp{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  .sparkle{position:absolute;font-size:20px;opacity:.6}
+  .s1{top:24px;left:25px}.s2{top:38px;right:30px}.s3{bottom:25px;left:35px}.s4{bottom:30px;right:28px}
+  @media(max-width:480px){.card{padding:38px 20px}.message{font-size:16px}}
+</style>
+</head>
+<body>
+<main class="card">
+  <span class="sparkle s1">✦</span><span class="sparkle s2">✦</span>
+  <span class="sparkle s3">✧</span><span class="sparkle s4">✦</span>
+  <div class="topline">A special day for someone special</div>
+  <div class="crown">🎉</div>
+  <h1>Happy Birthday</h1>
+  <div class="age">20</div>
+  <div class="subtitle">Selamat ulang tahun yang ke-20, <strong>Zahra</strong>! 🎉</div>
+  <div class="divider">✦ · ✧ · ✦</div>
+  <p class="message">
+    Hari ini adalah hari spesial untuk seseorang yang juga spesial.
+    Semoga di usia yang baru ini, Zahra selalu diberi kebahagiaan,
+    kesehatan, kemudahan dalam setiap langkah, dan banyak alasan untuk tersenyum.
+    Semoga semua doa baik dan impian Zahra perlahan menjadi nyata. 🌷
+  </p>
+  <button id="surpriseBtn" onclick="showSurprise()">Klik untuk kejutan kecil 🎁</button>
+  <div id="surprise">
+    ✨ <strong>Untuk Zahra,</strong><br>
+    Jangan pernah lupa kalau kamu pantas mendapatkan hal-hal baik dan kebahagiaan.
+    Tetap jadi Zahra yang manis, kuat, dan penuh warna, ya.
+    Semoga hari ini menyenangkan dan penuh kejutan seru. Sekali lagi, happy birthday! 🎂🎉
+  </div>
+  <div class="footer">MADE WITH ✦ JUST FOR ZAHRA</div>
+</main>
+<script>
+function showSurprise(){
+  const box=document.getElementById('surprise');
+  box.style.display='block';
+  document.getElementById('surpriseBtn').textContent='Yeay, happy birthday Zahra! 🎉';
+  for(let i=0;i<24;i++){
+    setTimeout(()=>{
+      const h=document.createElement('span');
+      h.className='heart';
+      h.textContent=['🎉','🎊','✦','✨','🌸'][Math.floor(Math.random()*5)];
+      h.style.left=Math.random()*100+'vw';
+      h.style.fontSize=(16+Math.random()*20)+'px';
+      h.style.animationDuration=(3+Math.random()*3)+'s';
+      document.body.appendChild(h);
+      setTimeout(()=>h.remove(),6500);
+    },i*90);
+  }
+}
+</script>
+</body>
+</html>
